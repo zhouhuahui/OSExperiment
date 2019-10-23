@@ -1,0 +1,10 @@
+insmod mydev.ko
+cat /proc/devices |grep gee
+mknod /dev/mydev c 244 0
+gcc test.c -o test
+./test
+rmmod mydev
+rm /dev/mydev
+
+printk:
+dmesg
